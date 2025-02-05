@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+struct item {
+    int weight, profit, ratio;
+};
+void selectionsort(item arr[], int n) {
+     for (int i = 0; i < n - 1; i++) {
+        int maxidx = i;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[j].ratio > arr[maxidx].ratio) {
+                maxidx = j;
+            }
+        }
+        swap(arr[i], arr[maxidx]);
+        for (int k = 0; k < n; k++) {
+            cout << "(" << arr[k].profit << ", " << arr[k].weight << ") ";
+        }
+    }
+}
+
+double knapsack(item items[], int n, int size) {
+    selectionsort(items, n);
+    double totalValue = 0;
+    for (int i = 0; i < n; i++) {
+        if (size>= items[i].weight) {
+            totalValue+= items[i].profit;
+            size-= items[i].weight;
+        } else {
+            totalValue+= items[i].profit * (size/ items[i].weight);
+            break; 
+        }
+    }
+    return totalValue;
+}
+int main() {
+    int n;
+    int size;
+    cout << "Enter the number of items: ";
+    cin >> n;
+    item items[n];
+    cout << "Enter weight and value of each item:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> items[i].weight >> items[i].profit;
+        items[i].ratio = items[i].profit / items[i].weight; 
+    }
+    cout << "Enter knapsack size";
+    cin >>size;
+    double maxProfit = knapsack(items, n, size);
+    cout << "Maximum profit " << maxProfit << endl;
+    return 0;
+}
