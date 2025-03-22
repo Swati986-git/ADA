@@ -28,7 +28,20 @@ TIME COMPLEXITY-Merge Sort has a consistent time complexity across all scenarios
 ->log n levels of recursion (because we keep halving the array).        
 ->O(n) work is done at each level during merging.       
 ->Total work:-
-𝑂(𝑛)+𝑂(𝑛)+𝑂(𝑛)+…(log 𝑛 times)=𝑂(log𝑛)
+𝑂(𝑛)+𝑂(𝑛)+𝑂(𝑛)+…(log 𝑛 times)=𝑂( n log𝑛)      
 
+AIM: To analyse the time complexity of Quick Sort.        
+1.)Choose a Pivot:-Typically the last element, first element, or a random element is chosen as the pivot.          
+2.)Partition the Array:-        
+a)Rearrange the array so that:         
+->All elements smaller than the pivot are on the left.
+->All elements greater than the pivot are on the right.       
+->The pivot is placed in its correct sorted position.            
+3.)Recursively Sort:-Recursively apply the same steps to the left and right subarrays.        
+
+TIME COMPLEXITY-
+a)Best Case: O(n log n) — When partitioning is balanced.         
+b)Worst Case: O(n²) — When partitioning is highly unbalanced (e.g., sorted array).           
+c)Average Case: O(n log n) — On average, it performs well.                           
 
 
