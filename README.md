@@ -62,5 +62,19 @@ b)Push the right subarray indices if it has more than one element.
 TIME COMPLEXITY-           
 Both recursive and iterative versions have the same time complexity because the number of partitioning steps remains the same.       
 
-AIM- To analyse the time complexity of magic square(Odd-order).
+
+AIM- To analyse the time complexity of magic square(Odd-order).      
+A magic square is a square matrix where the sum of every row, column, and diagonal is the same.        
+Algorithm for Odd-Order Magic Square (Siamese Method)-       
+1.)Start from the middle of the top row.        
+2.)Place 1 in the first position.         
+3.)Move up-right to place the next number.               
+4.)If moving out of bounds:                  
+a)Wrap around (move to the opposite side).                
+b)If the position is already occupied, move directly below the previous number.                   
+5.)Repeat until all numbers are placed.                 
+     
+TIME COMPLEITY-         
+The magic square contains n² elements.Each number from 1 to n² is placed exactly once.Since there are n² iterations with O(1) operations each.  
+Time Complexity=O(n^2)
 
