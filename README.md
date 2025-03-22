@@ -39,9 +39,28 @@ a)Rearrange the array so that:
 ->The pivot is placed in its correct sorted position.            
 3.)Recursively Sort:-Recursively apply the same steps to the left and right subarrays.        
 
-TIME COMPLEXITY-
+TIME COMPLEXITY-       
 a)Best Case: O(n log n) — When partitioning is balanced.         
 b)Worst Case: O(n²) — When partitioning is highly unbalanced (e.g., sorted array).           
 c)Average Case: O(n log n) — On average, it performs well.                           
 
+
+AIM: To analyse the time complexity of iterative quick sort.     
+1.)Initialize Stack:-    
+a)Create a stack (or an array) to store subarray indices.        
+b)Push the initial low and high values of the array onto the stack.           
+2.)Loop Until Stack is Empty:-       
+a)Pop high and low from the stack.      
+b)Partition the array around a pivot.      
+->Elements smaller than the pivot go to the left.      
+->Elements larger than the pivot go to the right.          
+3.)Push Subarray Indices to Stack:       
+a)Push the left subarray indices if it has more than one element.           
+b)Push the right subarray indices if it has more than one element.         
+4.)Repeat:-Continue the process until the stack is empty.           
+
+TIME COMPLEXITY-           
+Both recursive and iterative versions have the same time complexity because the number of partitioning steps remains the same.       
+
+AIM- To analyse the time complexity of magic square(Odd-order).
 
