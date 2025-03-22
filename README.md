@@ -25,9 +25,9 @@ b)Compare elements from both halves and place the smaller element first.
 c)Continue until all elements are merged in sorted order.  
 
 TIME COMPLEXITY-Merge Sort has a consistent time complexity across all scenarios because it always divides the array into two halves and merges them back in sorted order.     
-->log n levels of recursion (because we keep halving the array).
-->O(n) work is done at each level during merging.
-->Total work:
+->log n levels of recursion (because we keep halving the array).        
+->O(n) work is done at each level during merging.       
+->Total work:-
 𝑂(𝑛)+𝑂(𝑛)+𝑂(𝑛)+…(log 𝑛 times)=𝑂(log𝑛)
 
 
