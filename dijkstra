@@ -1,0 +1,67 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+const int MAX = 100;  // Maximum number of vertices
+int G[MAX][MAX];      // Adjacency matrix for the graph
+int Near[MAX];        // Near array to keep track of nearest nodes
+int Distance[MAX];    // Distance array to store shortest distances
+bool Visited[MAX];    // Visited array to keep track of processed nodes
+int findMin(int V) {
+    int min = INT_MAX;
+    int minIndex = -1;
+    for (int i = 0; i < V; i++) {
+        if (!Visited[i] && Distance[i] < min) {
+            min = Distance[i];
+            minIndex = i;
+        }
+    }
+    return minIndex;
+}
+void dijkstra(int V, int src) {
+    for (int i = 0; i < V; i++) {
+        Distance[i] = INT_MAX;  // Set initial distances to infinity
+        Visited[i] = false;     // Mark all nodes as unvisited
+        Near[i] = -1;           // Initialize Near[] with -1
+    }
+    Distance[src] = 0;      
+    for (int i = 0; i < V - 1; i++) {
+        int u = findMin(V);  
+        Visited[u] = true; 
+        for (int v = 0; v < V; v++) {
+            if (G[u][v] != 0 && !Visited[v] && Distance[u] + G[u][v] < Distance[v]) {
+                Distance[v] = Distance[u] + G[u][v];
+                Near[v] = u;
+            }
+        }
+    }
+    cout << "\nVertex\tDistance from Source\n";
+    for (int i = 0; i < V; i++) {
+        cout << i << "\t" << Distance[i] << endl;
+    }
+    cout << "\nNear Array (Predecessor of each Vertex):\n";
+    for (int i = 0; i < V; i++) {
+        cout << "Vertex " << i << " -> " << Near[i] << endl;
+    }
+}
+
+int main() {
+    int V, E, u, v, w, src;
+    cout << "Enter the number of vertices and edges: ";
+    cin >> V >> E;
+    for (int i = 0; i < V; i++) {
+        for (int j = 0; j < V; j++) {
+            G[i][j] = 0;
+        }
+    }
+
+    cout << "Enter edges in the format (u v w):\n";
+    for (int i = 0; i < E; i++) {
+        cin >> u >> v >> w;
+        G[u][v] = w;  // For directed graph
+        G[v][u] = w; 
+    }
+    cout << "Enter the source vertex: ";
+    cin >> src;
+    dijkstra(V, src);
+    return 0;
+}
