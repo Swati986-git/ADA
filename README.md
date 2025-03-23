@@ -107,5 +107,17 @@ TIME COMPLEXITY-a)Average Case: O(n log n)
 b)Worst Case: O(n²) (When points are distributed linearly)      
 
 
+LAB-4        
+AIM-To find shortest path using Dijkstra algorithm.        
+1.)Graph Representation:-Uses an adjacency matrix G[MAX][MAX] to store edge weights.      
+2.)Near Data Structure:-Near[i] keeps track of the nearest (predecessor) vertex to each vertex i.       
+3.)Distance Array:-Distance[i] keeps the shortest distance from the source to vertex i.         
+4.)Working:-            
+a)Start from the source node.            
+b)In each iteration, pick the vertex with the smallest tentative distance.           
+c)Update distances of adjacent vertices if a shorter path is found.          
+
+TIME COMPLEXITY-:-O(V²) (due to adjacency matrix traversal).       
+
 
 
