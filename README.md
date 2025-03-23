@@ -1,13 +1,26 @@
 LAB-1     
-*1-D PEAK AND 2-D PEAK    
+*1-D PEAK       
 Recursive Binary Search Approach-    
-1.Find the middle element.       
-2.Check if it's a peak:         
+1.)Find the middle element.       
+2.)Check if it's a peak:         
 ->If arr[mid] is greater than or equal to both neighbors (if they exist), return mid.                
 ->If the left neighbor is greater, search the left half.                
 ->Otherwise, search the right half.                      
-![Uploading image.png…]()   
+![Uploading image.png…]()  
 
+
+*2D Peak Finding Algorithm-
+1.)Matrix Traversal:-The function peak() recursively divides the matrix into quadrants by finding the midpoints m1 (row midpoint) and m2 (column midpoint).      
+2.)Divide and Conquer:-
+a)The matrix is recursively explored in the direction where a larger neighboring element exists.     
+b)It checks the following neighbors in order:-        
+->Right Neighbor: If it's greater, search the right half.       
+->Left Neighbor: If it's greater, search the left half.        
+->Bottom Neighbor: If it's greater, search the bottom half.         
+->Top Neighbor: If it's greater, search the top half.           
+c)Base Case:-When no neighbor is larger, the current element is a peak.         
+
+TIME COMPLEXITY-O(n log m) (For n rows and m columns)
 
 
 
