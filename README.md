@@ -89,5 +89,23 @@ b)If the position is already occupied, move directly below the previous number.
      
 TIME COMPLEITY-         
 The magic square contains n² elements.Each number from 1 to n² is placed exactly once.Since there are n² iterations with O(1) operations each.  
-Time Complexity=O(n^2)
+Time Complexity=O(n^2)        
+
+AIM- CONVEX HULL-Quick Hull algorithm is a Divide and Conquer approach to compute the Convex Hull of a set of points.      
+1.)Find Extremes:-      
+a)Find the points with minimum and maximum x-coordinates (leftmost and rightmost).       
+b)These two points form a base line.         
+2.)Partition Points:-Divide the remaining points into two sets:-     
+->Points on the left side of the base line.        
+->Points on the right side of the base line.         
+3.)Find Hull Points:-For each side:       
+a)Find the farthest point from the base line.            
+b)Recursively form a new base line between this point and the end points.                  
+c)Keep adding points that form the convex hull.          
+
+TIME COMPLEXITY-a)Average Case: O(n log n)      
+b)Worst Case: O(n²) (When points are distributed linearly)      
+
+
+
 
