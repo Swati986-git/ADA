@@ -1,0 +1,56 @@
+#include <iostream>
+#include <climits>
+using namespace std;
+#define V 5
+void primMST(int graph[V][V]) {
+    int near[V];         // To store the nearest vertex for each vertex
+    int MST[V - 1][2];   // To store MST edges
+    // Initialize near array with infinite distance
+    for (int i = 0; i < V; i++)
+        near[i] = INT_MAX;
+    // Choose vertex 0 as starting point
+    int u = 0;
+    near[u] = -1; // 
+    for (int i = 1; i < V; i++) {
+        int min = INT_MAX;
+        int v = -1;
+        // Update the near array for vertices not in MST
+        for (int j = 0; j < V; j++) {
+            if (near[j] != -1 && graph[u][j] < near[j]) {
+                near[j] = graph[u][j];
+            }
+        }
+        // Find the next vertex with minimum edge
+        for (int j = 0; j < V; j++) {
+            if (near[j] != -1 && near[j] < min) {
+                min = near[j];
+                v = j;
+            }
+        }
+        // Add the edge to MST
+        MST[i - 1][0] = u;
+        MST[i - 1][1] = v;
+        // Mark the vertex as included in MST
+        near[v] = -1;
+        u = v;
+    }
+    cout << "Edges in MST:\n";
+    int totalWeight = 0;
+    for (int i = 0; i < V - 1; i++) {
+        cout << MST[i][0] << " - " << MST[i][1] << "\n";
+        totalWeight += graph[MST[i][0]][MST[i][1]];
+    }
+    cout << "Total Weight: " << totalWeight << endl;
+}
+
+int main() {
+    int graph[V][V] = {
+        {0, 2, 0, 6, 0},
+        {2, 0, 3, 8, 5},
+        {0, 3, 0, 0, 7},
+        {6, 8, 0, 0, 9},
+        {0, 5, 7, 9, 0}};
+
+    primMST(graph);
+    return 0;
+}
