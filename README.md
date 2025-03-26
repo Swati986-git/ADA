@@ -89,7 +89,18 @@ b)If the position is already occupied, move directly below the previous number.
      
 TIME COMPLEITY-         
 The magic square contains n² elements.Each number from 1 to n² is placed exactly once.Since there are n² iterations with O(1) operations each.  
-Time Complexity=O(n^2)        
+Therefore time Complexity=O(n^2)        
+
+AIM-To analyze the performance of the Fractional Knapsack algorithm.     
+1.)Calculate Value-to-Weight Ratio for each item:-      
+Ratio=𝑣𝑖/𝑤𝑖     
+2.)​Sort items by decreasing ratio.      
+3.)Pick items one by one:-      
+a)If the entire item fits, take it.       
+b)If not, take a fraction that fits.    
+
+TIME COMPLEXITY:-We sort 𝑛 items based on their value-to-weight ratio.      
+Therefore time complexity-O(n log n)    
 
 AIM- CONVEX HULL-Quick Hull algorithm is a Divide and Conquer approach to compute the Convex Hull of a set of points.      
 1.)Find Extremes:-      
