@@ -117,7 +117,23 @@ a)Start from the source node.
 b)In each iteration, pick the vertex with the smallest tentative distance.           
 c)Update distances of adjacent vertices if a shorter path is found.          
 
-TIME COMPLEXITY-:-O(V²) (due to adjacency matrix traversal).       
+TIME COMPLEXITY:-O(V²) (due to adjacency matrix traversal).       
+
+
+LAB-5     
+AIM-To find Minimum Spanning Tree (MST) of a connected, weighted undirected graph using Prim's Algorithm.     
+1.)Initialize:-      
+a)Start with any arbitrary vertex as the source vertex.     
+b)Include it in the MST set.       
+c)Assign an infinite value to all other vertices.       
+2.)Pick the Minimum Edge:-From the edges that connect vertices in the MST to vertices not in the MST, pick the edge with the minimum weight.      
+3.)Update Weights:-         
+a)For the newly added vertex, check all its adjacent vertices.        
+b)If the weight of an edge to a vertex outside the MST is less than its current key value, update it.          
+4.)Repeat:-Continue picking the minimum weight edge until all vertices are included in the MST.         
+
+TIME COMPLEXITY:- O(V²) as finding the minimum weight edge in an unsorted array takes O(V) time.    
+Doing this for V vertices results in O(V²).    
 
 
 
