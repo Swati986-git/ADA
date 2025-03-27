@@ -154,4 +154,6 @@ a)If it forms a cycle,discard the edge.
 b)If it doesn't form a cycle,include it.     
 3.)Repeat this process until all vertices are connected (i.e., until the MST has V - 1 edges, where V is the number of vertices).     
 
+TIME COMPLEXITY:-Sorting E edges takes O(E log E).    
+
 
