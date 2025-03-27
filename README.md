@@ -147,4 +147,11 @@ TIME COMPLEXITY:- O(V²) as finding the minimum weight edge in an unsorted array
 Doing this for V vertices results in O(V²).    
 
 
+AIM-To find Minimum Spanning Tree (MST) of a connected, weighted undirected graph using Kruskal’s Algorithm.      
+1.)Sort all edges in non-decreasing order of their weights.      
+2.)Pick the smallest edge.Check if adding it to the spanning tree creates a cycle-      
+a)If it forms a cycle,discard the edge.      
+b)If it doesn't form a cycle,include it.     
+3.)Repeat this process until all vertices are connected (i.e., until the MST has V - 1 edges, where V is the number of vertices).     
+
 
